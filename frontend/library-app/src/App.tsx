@@ -4,6 +4,7 @@ import { ExploreTopBooks } from './layouts/navbar/ExploreTopBooks';
 import { Carousel } from './layouts/Carousel';
 import { Navbar } from './layouts/Navbar';
 import { Heros } from './layouts/Heros';
+import { LibraryServices } from './layouts/LibraryServices';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ExploreTopBooks/>
       <Carousel></Carousel>
       <Heros/>
+      <LibraryServices/>
     </div>
     );
 }
