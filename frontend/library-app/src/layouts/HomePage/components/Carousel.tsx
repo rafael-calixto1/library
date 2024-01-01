@@ -51,7 +51,7 @@ export const Carousel = () => {
                 <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-12 text-center">
                         <img
-                            src={require('../Images/BooksImages/book-d-senvolvendo-sistemas.png')}
+                            src={require('../../../Images/BooksImages/book-d-senvolvendo-sistemas.png')}
                             width='151'
                             height='233'
                             alt="book"
