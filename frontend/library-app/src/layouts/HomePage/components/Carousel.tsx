@@ -22,13 +22,13 @@ export const Carousel = () => {
                 throw new Error('Something went wrong!')
             }
 
-            const responseJson = await response.json();
 
+            const responseJson = await response.json();
             const responseData = responseJson._embedded.books;
 
             const loadedBooks: BookModel[] = [];
 
-            for (const key in response){
+            for (const key in responseData) {
                 loadedBooks.push({
                     id: responseData[key].id,
                     title: responseData[key].title,
@@ -77,23 +77,26 @@ export const Carousel = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="row d-flex justify-content-center align-items-center ">
-                                <ReturnBook/>
-                                <ReturnBook/>
-                                <ReturnBook/>
+                                {books.slice(0, 3).map(book => (
+                                    <ReturnBook book={book} key = {book.id}
+                                    />
+                                ))}
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="row d-flex justify-content-center align-items-center ">
-                                <ReturnBook/>
-                                <ReturnBook/>
-                                <ReturnBook/>  
+                                {books.slice(3, 6).map(book => (
+                                    <ReturnBook book={book} key = {book.id}
+                                    />
+                                ))}
                             </div>                     
                         </div>
                         <div className="carousel-item ">
                             <div className="row d-flex justify-content-center align-items-center ">
-                                <ReturnBook/>
-                                <ReturnBook/>
-                                <ReturnBook/>  
+                                {books.slice(6, 9).map(book => (
+                                    <ReturnBook book={book} key = {book.id}
+                                    />
+                                ))} 
                             </div>  
                         </div>
                     </div>
@@ -113,21 +116,7 @@ export const Carousel = () => {
  {/* MOBILE */}
             <div className="d-lg-none mt-3">
                 <div className="row d-flex justify-content-center align-items-center">
-                    <div className="col-12 text-center">
-                        <img
-                            src={require('../../../Images/BooksImages/book-d-senvolvendo-sistemas.png')}
-                            width='151'
-                            height='233'
-                            alt="book"
-                        />
-                        <h6 className="mt-2">
-                            <b>Book</b>
-                        </h6>
-                        <p>D.SenvolvendoSistemas</p>
-                        <a className="btn main-color text-white" href="#">
-                            Reserve
-                        </a>
-                    </div>
+                    <ReturnBook book={ books[7] } key = { books[7].id }/>;
                 </div>
                 <div className="row mt-3 justify-content-center">
                     <div className="col-12 text-center">

@@ -8,12 +8,13 @@ export const Footer = () => {
                         <a href="#" className="nav-link px-2 text-white">
                             Home
                         </a>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link px-2 text-white">
-                                Search books
-                            </a>
-                        </li>
                     </li>
+                    <li className="nav-item">
+                        <a href="#" className="nav-link px-2 text-white">
+                            Search books
+                        </a>
+                    </li>
+                   
                 </ul>
             </footer>
         </div>
