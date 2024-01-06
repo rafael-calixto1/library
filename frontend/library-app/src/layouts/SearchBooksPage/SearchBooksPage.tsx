@@ -125,7 +125,7 @@ export const SearchBooksPage = () => {
                         1 to 5 of 22 items: 
                     </p>
                     {books.map(book => (
-                        <SearchBook book={book} key={book.id}/>
+                        <SearchBook  book={book} key={book.id}/>
                     ))}
                 </div>
             </div>
