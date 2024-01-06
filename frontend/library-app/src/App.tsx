@@ -8,7 +8,8 @@ export const App = () => {
   return (
     <>
       <Navbar/>
-      <HomePage/>
+      {/*<HomePage/>*/}
+      SearchBoo
       <Footer/> 
     </>
     );
