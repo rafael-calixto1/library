@@ -25,3 +25,57 @@ The project's `pom.xml` file manages Maven configurations. It includes dependenc
 ### Conclusion
 
 This project provided hands-on experience in developing a Spring Boot library application, leveraging Spring Data JPA and Spring Data REST for CRUD operations, customizing REST endpoints, and integrating with a MySQL database.
+
+
+### GET /books
+- **Description:** Retrieves a list of all books.
+- **Response Body:** List of Book objects.
+- **Response Code:** 200 (OK)
+
+### GET /books/{id}
+- **Description:** Retrieves a specific book by its ID.
+- **Path Parameter:**  
+  - `id`: ID of the book.
+- **Response Body:** Book object.
+- **Response Code:**  
+  - 200 (OK) if the book is found.
+  - 404 (Not Found) if the book is not found.
+
+### GET /books/search/findByTitleContaining
+- **Description:** Searches for books whose title contains the given title parameter.
+- **Request Parameter:**  
+  - `title`: Title to search for.
+- **Response Body:** List of Book objects.
+- **Response Code:** 200 (OK)
+
+### GET /books/search/findByCategory
+- **Description:** Searches for books with the given category parameter.
+- **Request Parameter:**  
+  - `category`: Category to search for.
+- **Response Body:** List of Book objects.
+- **Response Code:** 200 (OK)
+- **Note:** Pagination is supported for the search endpoints.
+
+### POST /books
+- **Description:** Creates a new book.
+- **Request Body:** Book object.
+- **Response Body:** Created Book object.
+- **Response Code:** 201 (Created)
+
+### PUT /books/{id}
+- **Description:** Updates an existing book by its ID.
+- **Path Parameter:**  
+  - `id`: ID of the book to update.
+- **Request Body:** Updated Book object.
+- **Response Body:** Updated Book object.
+- **Response Code:**  
+  - 200 (OK) if the book is updated successfully.
+  - 404 (Not Found) if the book is not found.
+
+### DELETE /books/{id}
+- **Description:** Deletes a book by its ID.
+- **Path Parameter:**  
+  - `id`: ID of the book to delete.
+- **Response Code:**  
+  - 204 (No Content) if the book is deleted successfully.
+  - 404 (Not Found) if the book is not found.
