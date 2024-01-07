@@ -59,7 +59,33 @@ This project provided hands-on experience in developing a Spring Boot library ap
 ### POST /books
 - **Description:** Creates a new book.
 - **Request Body:** Book object.
+- **Example Request Body:** 
+```json
+  {
+    "title": "New Book",
+    "author": "New Author",
+    "description": "New Book Description",
+    "copies": 3,
+    "copiesAvailable": 3,
+    "category": "Fiction",
+    "img": "new_book_image.jpg"
+  }
+  ```
 - **Response Body:** Created Book object.
+- **Exaxmple Response Body:** 
+```json
+    {
+        "id": 3,
+        "title": "New Book",
+        "author": "New Author",
+        "description": "New Book Description",
+        "copies": 3,
+        "copiesAvailable": 3,
+        "category": "Fiction",
+        "img": "new_book_image.jpg"
+    }
+
+```
 - **Response Code:** 201 (Created)
 
 ### PUT /books/{id}
@@ -67,7 +93,31 @@ This project provided hands-on experience in developing a Spring Boot library ap
 - **Path Parameter:**  
   - `id`: ID of the book to update.
 - **Request Body:** Updated Book object.
+- **Example Request Body:** Updated Book object.
+```json
+    {
+    "title": "Updated Book",
+    "author": "Updated Author",
+    "description": "Updated Book Description",
+    "copies": 5,
+    "copiesAvailable": 2,
+    "category": "Non-Fiction",
+    "img": "updated_book_image.jpg"
+    }
+```
 - **Response Body:** Updated Book object.
+```json
+    {
+    "id": 1,
+    "title": "Updated Book",
+    "author": "Updated Author",
+    "description": "Updated Book Description",
+    "copies": 5,
+    "copiesAvailable": 2,
+    "category": "Non-Fiction",
+    "img": "updated_book_image.jpg"
+    }
+```
 - **Response Code:**  
   - 200 (OK) if the book is updated successfully.
   - 404 (Not Found) if the book is not found.
