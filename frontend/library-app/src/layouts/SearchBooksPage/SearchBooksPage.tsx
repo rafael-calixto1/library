@@ -114,7 +114,7 @@ export const SearchBooksPage = () => {
                         </div>
                         <div className="col-4">
                             <div className="dropdown">
-                                <button className="btn btn-secondary dropdwon-toggle" type="button"
+                                <button className="btn btn-secondary dropdown-toggle" type="button"
                                     id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                     aria-expanded='false'
                                 >
@@ -150,6 +150,8 @@ export const SearchBooksPage = () => {
                             </div>
                         </div>
                     </div>
+                    {totalAmountOfBooks > 0 ?
+                    <>
                     <div className="mt-3">
                         <h5>Number of results: ({totalAmountOfBooks})</h5>
                     </div>
@@ -159,6 +161,17 @@ export const SearchBooksPage = () => {
                     {books.map(book => (
                         <SearchBook  book={book} key={book.id}/>
                     ))}
+                    </>
+                    :
+                    <div className="m-5 ">
+                        <h3>
+                            Cant't find what are you looking for?
+                        </h3>
+                        <a type="button" className="btn main-color btn-md px-4 me-md-2 fw-bold text-white" 
+                            href="#"> Library Services 
+                        </a>
+                    </div>
+                    }
                     {totalPages > 1 &&
                         <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
                     }
