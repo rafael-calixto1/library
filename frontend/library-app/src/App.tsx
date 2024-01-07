@@ -9,24 +9,22 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 export const App = () => {
   return (
     <>
-      <Navbar/>  
+      <Navbar/>
       <Switch>
-  
-        <Route path='/' exact>
-          <Redirect to = "/home"/>
+        <Route path='/home' exact>
+          <HomePage />
         </Route>
-        
-        <Route>
-          <HomePage></HomePage>
-        </Route>
- 
+
         <Route path='/search'>
-          <SearchBooksPage/>
+          <SearchBooksPage />
         </Route>
-     
+
+        <Route path='/'>
+          <Redirect to="/home" />
+        </Route>
       </Switch>
-     
-      <Footer/> 
+
+      <Footer/>
     </>
-    );
+  );
 }
