@@ -39,6 +39,7 @@ export const BookCheckoutPage = () => {
             setIsLoading(false);
         };
         fetchBook().catch((error: any) => {
+
             setIsLoading(false);
             setHttpError(error.message);
         })
@@ -50,6 +51,7 @@ export const BookCheckoutPage = () => {
         )
     }
 
+
     if(httpError){
         return (
             <div className="container m-5">
@@ -57,7 +59,6 @@ export const BookCheckoutPage = () => {
             </div>
         )
     }
-
 
     return(
         <div>

@@ -28,6 +28,9 @@ export const App = () => {
           <Route path='/'>
             <Redirect to="/home" />
           </Route>
+          <Route path='/checkout/:bookId'>
+            <BookCheckoutPage/>
+          </Route>
         </Switch>
       </div>
       <Footer />
