@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import BookModel from "../../ models/BookModel"
-import { SpinnerLoading } from "../Utils/SppinerLoading";
+import { SpinnerLoading } from "../Utils/SpinerLoading";
 
 export const BookCheckoutPage = () => {
     
@@ -12,8 +12,7 @@ export const BookCheckoutPage = () => {
 
     useEffect(() => {
         const fetchBook  = async () => {
-            const baseUrl: string = `http://localhost:8080/api/books/${bookId}`
-
+            const baseUrl = `${process.env.REACT_APP_API_BASE_URL}/books/${bookId}`;
             const response = await fetch(baseUrl);
 
             if (!response.ok){ 

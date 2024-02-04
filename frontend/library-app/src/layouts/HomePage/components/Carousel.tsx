@@ -2,7 +2,7 @@ import { error } from "console";
 import BookModel from "../../../ models/BookModel";
 import { ReturnBook } from "./ReturnBook";
 import { useEffect, useState } from "react";
-import { SpinnerLoading } from "../../Utils/SppinerLoading";
+import { SpinnerLoading } from "../../Utils/SpinerLoading";
 import { Link } from "react-router-dom";
 
 
@@ -11,13 +11,12 @@ export const Carousel = () => {
     const [books, setBooks] = useState<BookModel[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState(null);
-
     useEffect(() => {
         const fetchBooks  = async () => {
-            const baseUrl: string = 'http://localhost:8080/api/books'
 
-            const url: string = `${baseUrl}?page=0&size=9`;
+            const baseUrl: string = process.env.REACT_APP_API_BASE_URL || '';
 
+            const url: string = `${baseUrl}/books?page=0&size=9`;
             const response = await fetch(url);
 
             if (!response.ok){ 
@@ -116,7 +115,7 @@ export const Carousel = () => {
  {/* MOBILE */}
             <div className="d-lg-none mt-3">
                 <div className="row d-flex justify-content-center align-items-center">
-                    <ReturnBook book={ books[7] } key = { books[7].id }/>;
+                    <ReturnBook book={ books[7] } key = { books[7].id }/>
                 </div>
                 <div className="row mt-3 justify-content-center">
                     <div className="col-12 text-center">
